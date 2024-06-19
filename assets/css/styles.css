@@ -18,8 +18,9 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    border-bottom: 2px solid rgba(24, 25, 63, 25%);
-    
+    border-bottom: 2px solid rgba(65, 68, 156, 0.534);
+    position: sticky;
+    top: 0px;
 }
 
 .navbar,
@@ -34,19 +35,18 @@ header{
 }
 
 .lista-navbar a{
-    color: white;
     cursor: pointer;
 }
 
 
 .activo{
     padding: 15px;
-    border-bottom: 5px solid rgb(24, 25, 63);
+    border-bottom: 5px solid rgba(65, 68, 156, 0.534);
 }
 
 .link:hover{
     padding-bottom: 16px;
-    border-bottom: 4px solid rgb(24, 25, 63);
+    border-bottom: 4px solid rgba(65, 68, 156, 0.534);
     font-weight: 500;
 }
 
@@ -55,6 +55,151 @@ header{
     cursor: pointer;
 }
 
+#menu-toggle,
+.menu-label {
+  display: none;
+}
+
+/*  MAIN  */
+
+/*             HERO                 */
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 200px;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 100px 0px;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 100px;
+}
+
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.hero-text h1{
+    font-size: 4rem;
+}
+
+.hero-text p{
+    font-size: 1.2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.hero-buttons button{
+    background: none;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.hero-buttons button:hover{
+    background: rgba(70, 70, 253, 0.452);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.hero img{
+    height: 300px;
+    width: 600px;
+}
+
+/*                ABOUT                     */
+
+.about{
+    text-align: center;
+    width: 60%;
+}
 
 
 
+/*              MEDIA QUERIES               */
+
+@media (max-width:1200px){
+    .hero{
+        flex-direction: column;
+    }
+
+    .hero-text{
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+@media (max-width:992px){
+  /* Header */
+  .navbar {
+    gap: 30px;
+  }
+
+  .lista-navbar {
+    position: absolute;
+    top: 65px;
+    left: 5%;
+    right: 5%;
+    flex-direction: column;
+    width: 90%;
+    background: none;
+    backdrop-filter: blur(100px);
+    border-top: 0;
+    border-radius: 0px 0px 15px 15px;
+    gap: 25px;
+    padding: 45px 0;
+    display: none;
+  }
+
+  .lista-navbar a {
+    font-size: 1.2rem;
+    border: none;
+  }
+
+  .menu-label {
+    display: flex;
+    order: 2;
+  }
+
+  .menu-label img {
+    height: 20px;
+    cursor: pointer;
+  }
+
+  /* LA MAGIA */
+  /* EL elemento seguido del + SI O SI tiene que seguir despues del input en el HTML. UN HERMANO INMEDIATO*/
+
+  /* Con la ~ el elemento puede estar o no seguido despues del input (PUEDE TENER ELEMENTOS EN MEDIO) */
+  #menu-toggle:checked + .lista-navbar {
+    display: flex;
+  }
+
+  .hero img{
+    width: 400px;
+    height: 200px;
+}
+}
+
+@media (max-width:565px){
+    .hero img{
+        width: 200px;
+        height: 100px;
+    }
+}
