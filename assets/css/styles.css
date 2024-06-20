@@ -183,10 +183,6 @@ main{
     cursor: pointer;
   }
 
-  /* LA MAGIA */
-  /* EL elemento seguido del + SI O SI tiene que seguir despues del input en el HTML. UN HERMANO INMEDIATO*/
-
-  /* Con la ~ el elemento puede estar o no seguido despues del input (PUEDE TENER ELEMENTOS EN MEDIO) */
   #menu-toggle:checked + .lista-navbar {
     display: flex;
   }
